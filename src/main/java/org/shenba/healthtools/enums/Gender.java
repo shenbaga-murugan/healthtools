@@ -1,7 +1,7 @@
 package org.shenba.healthtools.enums;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,27 +9,33 @@ import java.util.Map;
 /**
  * @author Shenbaga Murugan
  */
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum Gender {
 
     @JsonProperty("M")
-    MALE("M"),
+    MALE("M", "Male"),
     @JsonProperty("F")
-    FEMALE("F");
+    FEMALE("F", "Female");
 
     private String code;
+    private String displayValue;
     private static Map<String, Gender> genders;
 
     /**
      * default constructor
      * @param code
      */
-    Gender(String code) {
+    Gender(String code, String displayValue) {
         this.code = code;
+        this.displayValue = displayValue;
     }
 
-    @JsonValue
     public String getCode() {
         return code;
+    }
+
+    public String getDisplayValue() {
+        return this.displayValue;
     }
 
     /**
