@@ -43,7 +43,7 @@ public enum Ethnicity {
     }
 
     /**
-     * returns the Gender enum for given string code
+     * returns the Ethnicity enum for given string code
      * @param code
      * @return
      */

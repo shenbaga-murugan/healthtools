@@ -1,5 +1,6 @@
 package org.shenba.healthtools.controller;
 
+import org.shenba.healthtools.enums.ActivityLevel;
 import org.shenba.healthtools.enums.BMREquation;
 import org.shenba.healthtools.enums.Ethnicity;
 import org.shenba.healthtools.enums.Gender;
@@ -39,5 +40,14 @@ public class OptionsController {
     @GetMapping(path = "/bmr-equation")
     public BMREquation[] getBMREquationsOptions() {
         return BMREquation.values();
+    }
+
+    /**
+     * returns all Activity Levels
+     * @return
+     */
+    @GetMapping(path = "/activity-level")
+    public ActivityLevel[] getBActivityLevelOptions() {
+        return ActivityLevel.values();
     }
 }

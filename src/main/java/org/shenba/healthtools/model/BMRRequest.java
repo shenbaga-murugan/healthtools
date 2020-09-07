@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.shenba.healthtools.enums.ActivityLevel;
 import org.shenba.healthtools.enums.BMREquation;
 import org.shenba.healthtools.enums.Gender;
 
@@ -15,11 +16,13 @@ import org.shenba.healthtools.enums.Gender;
 @ApiModel
 public class BMRRequest {
     private int age;
-    @ApiModelProperty(allowableValues = "\"M\", \"F\"", dataType = "String", example = "M")
+    @ApiModelProperty(dataType = "String", example = "M")
     private Gender gender;
     private float weight;
     private float height;
     private float fatPercentage;
-    @ApiModelProperty(allowableValues = "\"M\", \"H\", \"K\"", dataType = "String", example = "H")
+    @ApiModelProperty(dataType = "String", example = "H")
     private BMREquation bmrEquation;
+    @ApiModelProperty(dataType = "String", example = "A")
+    private ActivityLevel activityLevel;
 }

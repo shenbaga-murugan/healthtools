@@ -60,4 +60,22 @@ public class BMRService {
                     * bmrRequest.getWeight());
     }
 
+    /**
+     * computes BMR for given information
+     * @param bmrRequest
+     * @return
+     */
+    public float computeBMR(BMRRequest bmrRequest) {
+        switch (bmrRequest.getBmrEquation()) {
+            case HARRIS_BENEDICT:
+                return computeHarrisBenedict(bmrRequest);
+            case KATCH_MC_ARDLE:
+                return computeKatchMcArdle(bmrRequest);
+            case MIFFLIN_ST_JEOR:
+                return computeMifflinJeor(bmrRequest);
+            default:
+                return 0;
+        }
+    }
+
 }

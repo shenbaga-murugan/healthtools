@@ -25,16 +25,7 @@ public class BMRController {
      */
     @PostMapping(path = "")
     public float getBMR(@RequestBody BMRRequest bmrRequest) {
-        switch (bmrRequest.getBmrEquation()) {
-            case HARRIS_BENEDICT:
-                return bmrService.computeHarrisBenedict(bmrRequest);
-            case KATCH_MC_ARDLE:
-                return bmrService.computeKatchMcArdle(bmrRequest);
-            case MIFFLIN_ST_JEOR:
-                return bmrService.computeMifflinJeor(bmrRequest);
-            default:
-                return 0;
-        }
+        return bmrService.computeBMR(bmrRequest);
     }
 
 }

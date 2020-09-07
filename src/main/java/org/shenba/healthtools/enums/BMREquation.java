@@ -9,7 +9,6 @@ import java.util.Map;
 /**
  * @author Shenbaga Murugan
  */
-
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum BMREquation {
 
@@ -42,7 +41,7 @@ public enum BMREquation {
     }
 
     /**
-     * returns the Gender enum for given string code
+     * returns the BMR Equation enum for given string code
      * @param code
      * @return
      */
