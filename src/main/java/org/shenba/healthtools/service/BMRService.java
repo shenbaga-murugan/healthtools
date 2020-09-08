@@ -16,11 +16,11 @@ public class BMRService {
      */
     public float computeHarrisBenedict(BMRRequest bmrRequest) {
         switch (bmrRequest.getGender()) {
-            case FEMALE:
+            case MALE:
                 return (13.397f * bmrRequest.getWeight())
                         + (479.9f * bmrRequest.getHeight())
-                        - (567.7f * bmrRequest.getAge()) + 88.362f;
-            case MALE:
+                        - (5.677f * bmrRequest.getAge()) + 88.362f;
+            case FEMALE:
                 return (9.247f * bmrRequest.getWeight())
                         + (309.8f * bmrRequest.getHeight())
                         - (4.330f * bmrRequest.getAge()) + 447.593f;
@@ -36,11 +36,11 @@ public class BMRService {
      */
     public float computeMifflinJeor(BMRRequest bmrRequest) {
         switch (bmrRequest.getGender()) {
-            case FEMALE:
+            case MALE:
                 return (10f * bmrRequest.getWeight())
                         + (625f * bmrRequest.getHeight())
                         - (5f * bmrRequest.getAge()) + 5f;
-            case MALE:
+            case FEMALE:
                 return (10f * bmrRequest.getWeight())
                         + (625f * bmrRequest.getHeight())
                         - (5f * bmrRequest.getAge()) - 161f;
